@@ -1,7 +1,8 @@
 # 大學作品與學習紀錄整理（University Portfolio）
 
 哈囉，我是房天越(TianYueh)，這是我在交大大學部期間上過的課程紀錄。  
-這裡記錄的主要是有Programming作業的課程。
+這裡記錄的主要是有Programming作業的課程。  
+（整理中）  
 
 ## 📚 課程 Courses
 
