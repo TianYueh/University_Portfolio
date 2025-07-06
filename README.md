@@ -27,4 +27,4 @@
 | 大四上 | [多媒體與人機互動總整與實作](大四_Senior/Multimedia_HCI_Capstone) | A |
 | 大四上 | [自然語言處理概論](大四_Senior/Intro_to_NLP) | A |
 | 大四上 | [MATLAB程式設計](大四_Senior/MATLAB_Programming) | A |
-| 大四上 | [資訊工程專題](大四_Junior/CS_Projects) | A+ | 專題競賽優等# University_Portfolio
+| 大四上 | [資訊工程專題](大四_Junior/CS_Projects) | A+ | 專題競賽優等 |
