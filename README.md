@@ -12,7 +12,6 @@
 | 大一下 | [數位電路設計](大一_Freshman/Digital_Circuit_Design) | A- |
 | 大一下 | [資料結構與物件導向程式設計](大一_Freshman/Object_Oriented_Programming) | A |
 | 大二上 | [機率](大二_Sophomore/Probability) | A+ |
-| 大二上 | [演算法概論](大二_Sophomore/Intro_to_Algorithms) | A | 
 | 大二上 | [資料庫系統概論](大二_Sophomore/Intro_to_Database_Systems) | A+ |
 | 大二下 | [計算機組織](大二_Sophomore/Computer_Organization) | A- |
 | 大二下 | [數值方法](大二_Sophomore/Numerical_Methods) | A+ |
