@@ -40,7 +40,7 @@ Most courses listed here include programming assignments, projects, and technica
 
 ## 🗒️ 課程補充說明 Course Notes
 
-1. 部分課程沒有Programming的作業，故未提供檔案，在此列出。  
+1. 部分課程沒有Programming的作業，故未提供檔案，在此列出    
    Some of the courses do not contain programming tasks, they are listed here.  
 
 | 年段 | 課程名稱 | 成績 | 備註 |
@@ -60,5 +60,6 @@ Most courses listed here include programming assignments, projects, and technica
 | 大三上 | 作業系統概論 | A | 規定無法放上GitHub |
 | 大三下 | 組合數學 | A+ | 網站關掉了QQ |
 
-3. 如有任何問題，可以聯絡我的信箱
+3. 如有任何問題，可以聯絡我的信箱  
+   If you have any questions, please contact me by e-mail.  
    jeremyliaoxd@gmail.com
