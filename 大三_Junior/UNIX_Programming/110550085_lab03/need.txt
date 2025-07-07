@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/mnt/c/Users/jerem/OneDrive/桌面/110550085_lab03

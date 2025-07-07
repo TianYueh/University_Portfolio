@@ -1,0 +1,4 @@
+mov rcx, [0x600000]
+mov rdx, [0x600008]
+mov [0x600008], rcx
+mov [0x600000], rdx

@@ -2,7 +2,11 @@
 
 哈囉，我是房天越(TianYueh)，這是我在交大大學部期間上過的課程紀錄。  
 這裡記錄的主要是有Programming作業的課程。  
-（整理中）  
+（整理中）
+
+Hi, I'm TianYueh (房天越), a CS student from National Yang Ming Chiao Tung University.  
+This repository contains coursework and project materials I worked on during my undergraduate studies.  
+Most courses listed here include programming assignments, projects, and technical reports.
 
 ## 📚 課程 Courses
 
@@ -27,4 +31,34 @@
 | 大四上 | [多媒體與人機互動總整與實作](大四_Senior/Multimedia_HCI_Capstone) | A |
 | 大四上 | [自然語言處理概論](大四_Senior/Intro_to_NLP) | A |
 | 大四上 | [MATLAB程式設計](大四_Senior/MATLAB_Programming) | A |
-| 大四上 | [資訊工程專題](大四_Junior/CS_Projects) | A+ | 專題競賽優等 |
+| 大四上 | [資訊工程專題](大四_Senior/CS_Projects) | A+ | 專題競賽優等 |
+| 大四下 | [編譯器設計](大四_Senior/Compiler_Design) | A |
+| 大四下 | [深度學習與實驗](大四_Senior/Deep_Learning) | 🐔 |
+| 大四下 | [圖形識別](大四_Senior/Pattern_Recognition) | B+ |
+| 大四下 | [基於深度學習之視覺辨識專論](大四_Senior/Visual_Recognition) | B+ |
+
+
+## 🗒️ 課程補充說明 Course Notes
+
+1. 部分課程沒有Programming的作業，故未提供檔案，在此列出。  
+   Some of the courses do not contain programming tasks, they are listed here.  
+
+| 年段 | 課程名稱 | 成績 | 備註 |
+|------|------|------|------|
+| 大一上 | 線性代數 | B+ |
+| 大一下 | 離散數學 | A |
+| 大二上 | 計算機網路概論 | B+ |
+| 大二下 | 通訊原理與無線網路 | A+ |
+| 大二下 | 正規語言概論 | A |
+
+2. 部分課程檔案因故佚失，或有明確規定不得放上GitHub，在此列出  
+   Some of the files cannot be uploaded or are missing, they are listed here...   
+
+| 年段 | 課程名稱 | 成績 | 備註 |
+|------|------|------|------|
+| 大二上 | 演算法概論 | A | 網站關掉了QQ |
+| 大三上 | 作業系統概論 | A | 規定無法放上GitHub |
+| 大三下 | 組合數學 | A+ | 網站關掉了QQ |
+
+3. 如有任何問題，可以聯絡我的信箱
+   jeremyliaoxd@gmail.com

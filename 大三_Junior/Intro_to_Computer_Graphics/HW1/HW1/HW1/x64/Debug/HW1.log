@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\include\Object.h(176,1): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\include\Object.h(183,1): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\include\Shader.h(31,1): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(323,64): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(328,63): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(333,60): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(338,64): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(343,61): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+C:\Users\jerem\OneDrive\桌面\HW1\HW1\main.cpp(348,63): warning C4267: '引數': 將 'size_t' 轉換為 'GLsizei'，資料可能遺失
+  HW1.vcxproj -> C:\Users\jerem\OneDrive\桌面\HW1\x64\Debug\HW1.exe
