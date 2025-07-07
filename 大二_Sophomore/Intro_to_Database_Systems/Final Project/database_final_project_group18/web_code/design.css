@@ -1,0 +1,132 @@
+body {
+    --bgColor: #fff;
+    --fontColor: #424242;
+    --h2color: blue;
+    --tablecolor1: rgb(255, 255, 168);
+    --tablecolor2: rgb(255, 255, 190);
+    --titlecolor1: #647ff6;
+    --titlecolor2: rgb(211 229 248);
+    --opacity: 0.2;
+    background: var(--bgColor);
+}
+
+p {
+    color: var(--fontColor);
+}
+
+label {
+    color: var(--fontColor);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --bgColor: #212121;
+        --fontColor: #9a9a9a;
+        --h2color: white;
+        --tablecolor1: rgb(116, 116, 116);
+        --tablecolor2: rgb(164, 164, 164);
+        --titlecolor1: rgb(152, 152, 152);
+        --titlecolor2: #cccccc;
+        --opacity: 0;
+    }
+
+    /* .bg{
+        opacity: 0.9;
+    } */
+}
+
+.all {
+    position: relative;
+}
+
+.bg {
+    /* background-image: url("/background.jpg"); */
+    width: 20%;
+    top: 50%;
+    left: 40%;
+    position: fixed;
+    display: flex;
+    opacity: var(--opacity);
+}
+
+.content {
+    width: 90%;
+    padding: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.title {
+    border: 3px solid var(--titlecolor1);
+    border-radius: 10px;
+    color: black;
+    background-color: var(--titlecolor2);
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    color: var(--fontColor);
+}
+
+h2 {
+    color: var(--h2color);
+}
+
+.select_submit:hover {
+    color: rgb(60, 60, 60);
+    font-weight: 700;
+    background-color: rgb(120, 120, 120);
+}
+
+.submit:hover {
+    color: rgb(60, 60, 60);
+    font-weight: 700;
+    background-color: rgb(120, 120, 120);
+}
+
+.reset:hover {
+    color: rgb(60, 60, 60);
+    font-weight: 700;
+    background-color: rgb(120, 120, 120);
+}
+
+.select_submit {
+    font-weight: 700;
+    background-color: rgb(226, 226, 226);
+}
+
+.submit {
+    font-weight: 700;
+    background-color: rgb(226, 226, 226);
+}
+
+.reset {
+    font-weight: 700;
+    background-color: rgb(226, 226, 226);
+}
+
+option {
+    background-color: white;
+}
+
+.input {
+    background-color: white;
+}
+
+td:nth-child(odd) {
+    background-color: var(--tablecolor1);
+}
+
+td:nth-child(even) {
+    background-color: var(--tablecolor2);
+}
+
+td:hover {
+    background-color: rgb(247, 255, 254);
+}
+
+/* *{
+    background-color: rgb(255, 237, 204);
+} */

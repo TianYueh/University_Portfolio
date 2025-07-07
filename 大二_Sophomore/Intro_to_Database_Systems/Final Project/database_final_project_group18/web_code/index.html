@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgUgncmaHDVonZ9i4pnzUGP746_HEgF5s"></script>
+    <meta charset="UTF-8">
+    <title>Parking Lot Searching System - Database Final Project</title>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+    <div class="all">
+        <img class="bg" src="background.jpg" />
+        <div class="content">
+            <h1 class="title"><b>新竹曾好停</b></h1>
+            <br />
+            <hr />
+            <br />
+            <h2>目前僅支援新竹市區範圍</h2>
+            <!-- <form class="search_bar" id="search_bar">
+            <input  type="text" placeholder="請輸入地點" id="input" class="input">
+            <input  type="submit" value="查詢" class="submit" />
+            </form>  -->
+            <div class="form">
+                <!-- 輸入表格(自行輸入需按清除才能用選項) -->
+                <p>自行輸入地點或者使用預設選項(若搜尋的地點為連鎖店請一併輸入分店名)</p>
+                <span>請選擇交通工具：</span>
+                <input type="radio" name="vehicle" class="car" value="car" checked>汽車
+                <input type="radio" name="vehicle" class="motor" value="motor">機車
+                <br />
+                <br />
+                <label>輸入新竹市內地點：</label>
+                <input type="text" id="input" class="input" placeholder="輸入特定地點" />
+                <input type="submit" value="查詢" class="submit" />
+                <input type="button" value="清除" class="reset">
+            </div>
+            <br />
+            <div>
+                <!-- 一些預設表格選項 -->
+                <label>預設選項：</label>
+
+
+                <select id="attribute-list" onchange="changeAttribute(this.selectedIndex)"
+                    style="background-color:white">
+                    <option value="none" selected disabled hidden>請選擇種類</option>
+                    <option value="飲食">飲食</option>
+                    <option value="購物">購物</option>
+                    <option value="娛樂">娛樂</option>
+                    <option value="交通">交通</option>
+                    <option value="熱門地點">熱門地點</option>
+                </select>
+
+                <select id="location-list" name="choice" class="choice" style="background-color:white"></select>
+
+                <input type="submit" value="查詢" class="select_submit">
+                <br/>
+                <br/>
+                <input type="button" value="查詢各停車場統計資料" class="submit" onclick="window.location.href='park_graph/test_chart.html'"/>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <h2>停車場資訊 ( 顯示最近五個 ) ：</h2>
+            <section class="section">
+
+                <table border="1">
+                    <thead>
+                        <td>停車場名稱</td>
+                        <!--<td>類型</td>-->
+                        <td>地址</td>
+                        <td>營業時間</td>
+                        <td>平日價格</td>
+                        <td>假日價格</td>
+                        <td>剩餘汽車停車位</td>
+                        <td>剩餘機車停車位</td>
+                        <td>距離(公里)</td>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </section>
+            <script>
+                
+                /*var attribute=['飲食','購物','娛樂','交通'];
+                var attributeSelect=document.getElementById("attribute-list");
+                var inner="";
+                for(var i=0;i<attribute.length;i++){
+                    inner=inner+'<option value=+i+>'+attribute[i]+'</option>';
+                }
+                attributeSelect.innerHTML=inner;*/
+                window.onload = callapi_recommend;
+
+                var locName = new Array();
+                locName[0] = [];
+                locName[1] = ['段純貞 新竹店', '段純貞 建功店', '築間 新竹中華店', '沐蘭', 'Oh! Yaki', '麥當勞 光復二店', '麥當勞 南大店', '星巴克 清大店',
+                    '硬派主廚 東門市場', '硬派主廚 關東店', '石頭日式燒肉', '白鬍子牛排 清大店', '夜排檔熱炒', '千葉火鍋 新竹忠孝店',
+                    '千兵衛日式燒肉', '涮肉亭 新竹光復店', '麵堂拉麵專賣店', '阿彤北和牛海鮮燒肉定食', '麵屋吉光', '壽司郎 慈雲店'];
+                locName[2] = ['巨城', '大遠百', '大潤發 忠孝店', '大潤發 湳雅店', '愛買', 'nova 新竹店', '全聯 自由店', '全聯 忠孝店', '全聯 食品店',
+                    '全聯 南大店', '全聯 振興店', '全聯 科學園區店', '全聯 龍山店', '全聯 關新西店', '全聯 金山店', '全聯 關東店', '全聯 武陵店',
+                    '全聯 林森店', '全聯 中正店', '全聯 延平店', '全聯 西大店', '全聯 城北店', 'Costco 新竹店', '迪卡儂', '晶品城'];
+                locName[3] = ['新竹市立動物園', '健身工廠 公道五廠', '健身工廠 光埔廠', '新科國民運動中心', '新竹運動中心', '好樂迪', '錢櫃', '南寮漁港',
+                    '青青草原', '十八尖山', '青草湖', '金城新村'];
+                locName[4] = ['新竹火車站', '北新竹車站', '千甲車站', '新莊車站', '三姓橋車站', '香山車站'];
+                locName[5] = [];
+
+
+
+                function changeAttribute(index) {
+                    var Sinner = "";
+                    for (var i = 0; i < locName[index].length; i++) {
+                        Sinner = Sinner + '<option value="' + locName[index][i] + '">' + locName[index][i] + '</option>';
+                    }
+                    var locSelect = document.getElementById("location-list");
+                    locSelect.innerHTML = Sinner;
+                }
+                changeAttribute(document.getElementById("attribute-list").selectedIndex);
+
+                // 讀取輸入並取得座標
+                const t1 = document.querySelector('.l1');
+                const t2 = document.querySelector('.l2');
+                const t3 = document.querySelector('.l3');
+
+                const input = document.querySelector('.input');
+                const submit = document.querySelector('.submit');
+                const reset = document.querySelector('.reset')
+                const select_input = document.querySelector('.choice');
+                const select_submit = document.querySelector('.select_submit');
+
+
+
+                var geocoder = new google.maps.Geocoder();
+
+                async function callapi_withcoordinate(x_coor, y_coor, vehicle_type) {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    var raw = JSON.stringify({ "x_coor": x_coor, "y_coor": y_coor, "vehicle_type": vehicle_type });
+                    const response = await fetch("https://gx00vmnz70.execute-api.us-east-1.amazonaws.com/dev", { method: "POST", headers: myHeaders, body: raw, redirect: 'follow' });
+                    console.log(response);
+                    const data = await response.json();
+                    console.log(data);
+                    CreateTable(data.query, 0);
+                }
+
+                async function callapi_withdistance(location, select_vehicle) {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    var raw = JSON.stringify({ "location": location, 'vehicle_type': select_vehicle });
+                    const response = await fetch("https://mv0qxgtceg.execute-api.us-east-1.amazonaws.com/dev", { method: "POST", headers: myHeaders, body: raw, redirect: 'follow' });
+                    console.log(response);
+                    const data = await response.json();
+                    console.log(data);
+                    CreateTable(data.query, 1);
+                }
+
+                async function callapi_recommend() {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    var raw = JSON.stringify();
+                    const response = await fetch("https://cmae10gib3.execute-api.us-east-1.amazonaws.com/dev", { method: "POST", headers: myHeaders, body: raw, redirect: 'follow' });
+                    console.log(response);
+                    const data = await response.json();
+                    data1 = data.query;
+                    for (let j = 0; j < 10; j++) {
+                        locName[5][j] = data1[j][0];
+                    }
+                }
+
+                function codeAddress() {
+                    var select_vehicle = document.querySelector('input[name="vehicle"]:checked').value;
+                    var address;
+                    var vehicle = select_vehicle;
+                    if (input.value != '') address = input.value;
+                    else if (select_input.value != '') address = select_input.value;
+                    console.log(select_input.value)
+                    console.log("您想查詢的地方是：" + address + vehicle);
+                    geocoder.geocode({ 'address': address }, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            console.log("Searching Successful!");
+                            var lat = results[0].geometry.location.lat();
+                            var lng = results[0].geometry.location.lng();
+                            callapi_withcoordinate(lat, lng, vehicle);
+                        }
+                    });
+                    clear();
+                }
+
+                function codeAddress_select() {
+                    var select_vehicle = document.querySelector('input[name="vehicle"]:checked').value;
+                    var address;
+                    var vehicle = select_vehicle;
+                    address = select_input.value;
+                    console.log(select_input.value)
+                    console.log("您想查詢的地方是：" + address + vehicle);
+                    callapi_withdistance(address, vehicle);
+                    clear();
+                }
+
+                submit.addEventListener('click', codeAddress);
+                select_submit.addEventListener('click', codeAddress_select);
+                //清除按鈕
+                function clear() {
+                    input.value = '';
+                }
+                reset.addEventListener('click', clear);
+
+            </script>
+            <script>
+                //預設表格設定，需要讓data變成從db抓下來的資料(?)
+                const check = document.querySelector('.submit');
+                const select_check = document.querySelector('.select_submit');
+                function CreateTable(data, x) {
+                    let tbody = document.querySelector('tbody');
+                    //清空表格
+                    tbody.innerHTML = '';
+
+                    //跟二維陣列一樣，利用createElement
+                    let need = [[9, 8, 1, 2, 3, 10, 11, 13], [0, 1, 3, 4, 5, 8, 9, 2]];
+                    for (let i = 0; i < data.length; i++) {
+                        let tr = document.createElement('tr');
+                        tbody.appendChild(tr);
+                        for (let j = 0; j < 8; j++) {
+                            let td = document.createElement('td');
+                            if (j == 7) {
+                                td.innerHTML = (data[i][need[x][j]] / 1000).toFixed(1);
+                                tr.appendChild(td);
+                            }
+                            else {
+                                td.innerHTML = data[i][need[x][j]];
+                                tr.appendChild(td);
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

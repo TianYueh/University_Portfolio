@@ -1,0 +1,48 @@
+(1)
+with update_hours as(
+select *, extract(hour from update_time) as hours
+from park_info_realtime_old
+),
+park_avg as(
+select park_id ,round(avg(freespace_car)) as avgfreecar, round(avg(freespace_mot)) as avgfreemotor ,hours
+from update_hours 
+group by hours ,park_id
+)
+select avgfreecar, avgfreemotor , totalspace_car, totalspace_mot , hours 
+from park_avg natural join park_info natural join park_name
+where park_name = 'THE PLACE YOU CHOOSE'
+order by hours
+
+(2)
+select location_name ,count(location_name) as counting
+from history_search
+group by location_name
+order by counting desc
+limit 5
+
+(3)
+select * ,(round(( 6378.138 * 2 * 
+		   asin( sqrt ( pow ( sin ( 
+		  ( (INPUT_DATA) * PI() / 180 - t1.x_coor * PI() / 180) / 2) , 2)
+		  + COS((INPUT_DATA) * PI() / 180) * COS(t1.x_coor * PI() / 180) * POW(
+		   SIN( ( (INPUT_DATA) * PI() / 180 - t1.y_coor * PI() / 180) / 2),2
+		   )))*1000 ))) / 1000 AS DISTANCE
+FROM park_info as t1 natural join park_location natural join park_name natural join park_info_realtime
+where freespace_car > 0
+order by DISTANCE
+limit 5
+
+(4)
+with parkinglot as
+(
+select *
+from park_info natural join park_location natural join park_name natural join park_info_realtime
+)
+select park_name , park_location , distance , business_hour , weekday_cost, holiday_cost,
+	totalspace_car, totalspace_mot, freespace_car, freespace_mot, update_time
+from (location_with_parkinglot natural join location_table) inner join parkinglot
+on parkinglot.park_id = location_with_parkinglot.park_id  
+where location_name = 'THE PLACE YOU CHOOSE' 
+and freespace_car > 0
+order by distance
+limit 5
