@@ -1,0 +1,30 @@
+import sys
+
+def strxor(a, b):
+    if len(a) > len(b):
+        return bytes([x ^ y for (x, y) in zip(a[:len(b)], b)])
+    else:
+        return bytes([x ^ y for (x, y) in zip(a, b[:len(a)])])
+
+cypherText = ("20814804c1767293b99f1d9cab3bc3e7 ac1e37bfb15599e5f40eef805488281d").split()
+
+cypherTextIV = bytes.fromhex(cypherText[0])
+cypherTextC0 = bytes.fromhex(cypherText[1])
+
+plainText = "Pay Bob 100$".encode()
+plainTextTarget = "Pay Bob 500$".encode()
+
+paddingNum1 = str(len(cypherTextC0) - len(plainText))
+padding1 = bytes([int(paddingNum1)] * int(paddingNum1))
+
+paddingNum2 = str(len(cypherTextC0) - len(plainTextTarget))
+padding2 = bytes([int(paddingNum2)] * int(paddingNum2))
+
+plainText += padding1
+plainTextTarget += padding2
+
+xorredPlainText = strxor(plainText, plainTextTarget)
+
+newIV = strxor(xorredPlainText, cypherTextIV)
+
+print("New CBC\n" + newIV.hex() + cypherText[1])

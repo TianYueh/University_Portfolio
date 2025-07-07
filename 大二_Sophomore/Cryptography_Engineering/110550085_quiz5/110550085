@@ -1,0 +1,63 @@
+def BMA(seq):
+    N=len(seq)
+    s=seq[:]
+    
+    l=-1
+    for i in range(N):
+        if(s[i]==1):
+            l=i+1
+            break
+        
+    f=set([l,0])
+    
+    g=set([0])
+    a=l-1
+    b=0
+    
+    for n in range(l, N):
+        d=0
+        for e in f:
+            d^=s[e+n-l]
+            
+        if(d==0):
+            b+=1
+        else:
+            if(2*l>n):
+                f^=set([a-b+e for e in g])
+                b+=1
+            else:
+                tmp=f.copy()
+                f=set([b-a+e for e in f])^g
+                l=n+1-l
+                g=tmp
+                a=b
+                b=n-l+1
+                
+    def pp(poly):
+        result=''
+        li=sorted(poly, reverse=True)
+        for i in li:
+            if(i==0):
+                result+='1'
+            else:
+                result+='x^%s'%str(i)
+
+            if(i!=li[-1]):
+                result+='+'
+        
+        return result
+    return pp(f)
+
+
+seq=(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0,
+0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0,
+0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
+0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1)
+(poly)=BMA(seq)
+
+print('Input Sequence is:')
+print(str(seq))
+print("Shortest LFSR's characteristic polynomial is:")
+print(poly)
+
+

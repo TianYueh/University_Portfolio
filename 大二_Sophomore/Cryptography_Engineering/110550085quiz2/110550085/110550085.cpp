@@ -1,0 +1,86 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main(){
+    cout<<"1. \n7 columns by 9 rows.\n";
+    cout<<"2. \nLASER BEAMS CAN BE MODULATED TO CARRY MORE INTELLIGENCE THAN RADIO WAVES QR\n";
+    string s="CRYPTANALYSIS IN RECENT PUBLICATIONS ALSO CRYPTANALYSIS REFERS IN THE ORIGINAL SENSE TO THE STUDY OF METHODS AND TECHNIQUES TO OBTAIN INFORMATION FROM SEALED TEXTS THIS INFORMATION CAN BE BOTH THE KEY USED AND THE ORIGINAL TEXT NOWADAYS, THE TERM CRYPTANALYSIS MORE GENERALLY REFERS TO THE ANALYSIS OF CRYPTOGRAPHIC METHODS NOT ONLY FOR CLOSURE WITH THE AIM OF EITHER BREAKING THEM I E ABOLISHING THEIR PROTECTIVE FUNCTION OR OR TO PROVE AND QUANTIFY THEIR SECURITY CRYPTANALYSIS IS THUS THE COUNTERPART TO CRYPTOGRAPHY BOTH ARE SUBFIELDS OF CRYPTOLOGY";
+    string t="DIE KRYPTOANALYSE IN NEUEREN PUBLIKATIONEN AUCH KRYPTANALYSE BEZEICHNET IM URSPRUNGLICHEN SINNE DAS STUDIUM VON METHODEN UND TECHNIKEN UM INFORMATIONEN AUS VERSCHLUSSELTEN TEXTEN ZU GEWINNEN DIESE INFORMATIONEN KONNEN SOWOHL DER VERWENDETE SCHLUSSEL ALS AUCH DER ORIGINALTEXT SEIN HEUTZUTAGE BEZEICHNET DER BEGRIFF KRYPTOANALYSE ALLGEMEINER DIE ANALYSE VON KRYPTOGRAPHISCHEN VERFAHREN NICHT NUR ZUR VERSCHLUSSELUNG MIT DEM ZIEL DIESE ENTWEDER ZU BRECHEN D H IHRE SCHUTZFUNKTION AUFZUHEBEN BZW ZU UMGEHEN ODER IHRE SICHERHEIT NACHZUWEISEN UND ZU QUANTIFIZIEREN KRYPTOANALYSE IST DAMIT DAS GEGENSTUCK ZUR KRYPTOGRAPHIE BEIDE SIND TEILGEBIETE DER KRYPTOLOGIE";
+    string u="MVWZXYXEJIWGC ML BIAORR ZYZVMAKXGYRQ KPQY GPITRKRYVCQSW POJCBW GX XFO SPSKGXEJ CILCI RY XFO WREHW YJ KOXFYHQ KRB DIARRGAYCC XM YFRKML SRDYVKKXGYR DBSK CIYVIB DIVDW RRMQ SRDYVKKXGYR AKR ZO FMDL RRI IOC SCIB KRB DLC YVGQMLKP ROBR XSUKHYIW, RRI ROVK MVWZXYXEJIWGC QMBI EORCBEJVC POJCBW RY XFO ELKPWCMQ YJ ABCNDSEBENRMA WIRRSBC RMD SLVC DYV AVSQEVC GMRR XFO EGW SD OMRRIP LVCKOGXK RRIK S I YLSJSWFSRE DLCSV NBSROGRSZC PYLMXGYR MB SP DS NBSTO ELN USKRRSJW DLCSV QOGSBMRI GPITRKRYVCQSW GC XFEW RRI AYYLDIPZEPD XM MVWZXMQVYZLW LSRR EPO WSLJGOPBC SD MVWZXMVSEI";
+    string v="FUBSWDQDOBVLV LQ UHFHQW SXEOLFDWLRQV DOVR FUBSWDQDOBVLV UHIHUV LQ WKH RULJLQDO VHQVH WR WKH VWXGB RI PHWKRGV DQG WHFKQLTXHV WR REWDLQ LQIRUPDWLRQ IURP VHDOHG WHAWV WKLV LQIRUPDWLRQ FDQ EH ERWK WKH NHB XVHG DQG WKH RULJLQDO WHAW QRZDGDBV, WKH WHUP FUBSWDQDOBVLV PRUH JHQHUDOOB UHIHUV WR WKH DQDOBVLV RI FUBSWRJUDSKLF PHWKRGV QRW RQOB IRU FORVXUH ZLWK WKH DLP RI HLWKHU EUHDNLQJ WKHP L H DEROLVKLQJ WKHLU SURWHFWLYH IXQFWLRQ RU RU WR SURYH DQG TXDQWLIB WKHLU VHFXULWB FUBSWDQDOBVLV LV WKXV WKH FRXQWHUSDUW WR FUBSWRJUDSKB ERWK DUH VXEILHOGV RI FUBSWRORJB";
+    int arr[26]={0};
+    int arrdeutsch[26]={0};
+    int arrunknown[26]={0};
+    int arrunknown2[26]={0};
+    int sal=0;
+    int tal=0;
+    int ual=0;
+    int val=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]>='A'&&s[i]<='Z'){
+            arr[s[i]-'A']++;
+            sal++;
+        }
+    }
+    for(int i=0;i<t.length();i++){
+        if(t[i]>='A'&&t[i]<='Z'){
+            arrdeutsch[t[i]-'A']++;
+            tal++;
+        }
+    }
+    for(int i=0;i<u.length();i++){
+        if(u[i]>='A'&&u[i]<='Z'){
+            arrunknown[u[i]-'A']++;
+            ual++;
+        }
+    }
+    for(int i=0;i<v.length();i++){
+        if(v[i]>='A'&&v[i]<='Z'){
+            arrunknown2[v[i]-'A']++;
+            val++;
+        }
+    }
+
+    /*for(int i=0;i<s.length();i++){
+        if(s[i]>='A'&&s[i]<='Z'){
+            arr[s[i]-'A']++;
+        }
+    }*/
+    double ics=0, ict=0, icu=0, icv=0;
+    
+    for(int i=0;i<=25;i++){
+        ics+=(arr[i]*(arr[i]-1));
+        ict+=(arrdeutsch[i]*(arrdeutsch[i]-1));
+        icu+=(arrunknown[i]*(arrunknown[i]-1));
+        icv+=(arrunknown2[i]*(arrunknown2[i]-1));
+        /*printf("%c: ", i);
+        cout<<arr[i-'A']<<"\n";*/
+    }
+    ics=double(ics/(sal*(sal-1)));
+    ict=double(ict/(tal*(tal-1)));
+    icu=double(icu/(ual*(ual-1)));
+    icv=double(icv/(val*(val-1)));
+    cout<<"3.\n";
+    cout<<"The IC of the first paragraph is: "<<ics<<".\n";
+    cout<<"The IC of the second paragraph is: "<<ict<<".\n";
+    cout<<"The IC of the third paragraph is: "<<icu<<".\n";
+    cout<<"The IC of the fourth paragraph is: "<<icv<<".\n";
+
+    cout<<"4.\n";
+    string f="RHVST TEYSJ KMHUM BBCLC GLKBM HBSJH HDAYC PPWHD UUTAP STJAI YMXKA OKARN NATNG CVRCH BNGJU EMXWH UERZE RLDMX MASRT LAHRJ KIILJ BQCTI BVFZW TKBQE OPKEQ OEBMU NUTAK ZOSLD MKXVO YELLX SGHTT PNROY MORRW BWZKX FFIQJ HVDZZ JGJZY IGYAT KWVIB VDBRM BNVFC MAXAM CALZE AYAZK HAOAA ETSGZ AAJFX HUEKZ IAKPM FWXTO EBUGN THMYH FCEKY VRGZA QWAXB RSMSI IWHQM HXRNR XMOEU ALYHN ACLHF AYDPP JBAHV MXPNF LNWQB WUGOU LGFMO BJGJB PEYVR GZAQW ANZCL XZSVF BISMB KUOTZ TUWUO WHFIC EBAHR JPCWG CVVEO LSSGN EFGCC SWHYK BJHMF ONHUE BYDRS NVFMR JRCHB NGJUB TYRUU TYVRG ZAXWX CSADX YIAKL INGXF FEEST UWIAJ EESFT HAHRT WZGTM CRS";
+    double icf=0;
+    int fal=0;
+    int arrf[26]={0};
+    for(int i=0;i<f.length();i++){
+        if(f[i]>='A'&&f[i]<='Z'){
+            arrf[f[i]-'A']++;
+            fal++;
+        }
+    }
+    for(int i=0;i<=25;i++){
+        icf+=(arrf[i]*(arrf[i]-1));
+    }
+    icf=double(icf/(fal*(fal-1)));
+    cout<<"The IC of this paragraph is "<<icf<<" , so we can know that it should be polyalphabetic cipher.\n";
+}
