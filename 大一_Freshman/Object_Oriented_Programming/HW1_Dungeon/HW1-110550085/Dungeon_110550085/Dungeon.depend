@@ -1,0 +1,326 @@
+# depslib dependency file v1.0
+1586327094 source:d:\c++\dungeon\dungeon\dungeon.cpp
+	"Dungeon.h"
+
+1586326232 d:\c++\dungeon\dungeon\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1586326232 d:\c++\dungeon\dungeon\player.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Room.h"
+	"Item.h"
+
+1586326232 d:\c++\dungeon\dungeon\gamecharacter.h
+	<iostream>
+	<string>
+	"Object.h"
+
+1586326232 d:\c++\dungeon\dungeon\object.h
+	<iostream>
+	<string>
+	<vector>
+
+1586326232 d:\c++\dungeon\dungeon\room.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+
+1586326232 d:\c++\dungeon\dungeon\item.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+	"Player.h"
+
+1586326232 d:\c++\dungeon\dungeon\monster.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Player.h"
+
+1586326232 d:\c++\dungeon\dungeon\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Player.h"
+	"Item.h"
+
+1586412914 d:\c++\dungeon\dungeon\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	<utility>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\gamecharacter.cpp
+	"GameCharacter.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\item.cpp
+	"Item.h"
+
+1586761373 source:d:\c++\dungeon\dungeon\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Dungeon.h"
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\monster.cpp
+	"Monster.h"
+
+1586760713 source:d:\c++\dungeon\dungeon\npc.cpp
+	"NPC.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\object.cpp
+	"Object.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\player.cpp
+	"Player.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\record.cpp
+	"Record.h"
+
+1586326232 source:d:\c++\dungeon\dungeon\room.cpp
+	"Room.h"
+
+1650642478 source:c:\users\jerem\onedrive\桌面\hw1_110550085\gamecharacter.cpp
+	"GameCharacter.h"
+
+1650606834 c:\users\jerem\onedrive\桌面\hw1_110550085\gamecharacter.h
+	<iostream>
+	<string>
+	"Object.h"
+
+1650604111 c:\users\jerem\onedrive\桌面\hw1_110550085\object.h
+	<iostream>
+	<string>
+	<vector>
+
+1650624260 source:c:\users\jerem\onedrive\桌面\hw1_110550085\item.cpp
+	"Item.h"
+
+1650475710 c:\users\jerem\onedrive\桌面\hw1_110550085\item.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+	"Player.h"
+
+1650628275 c:\users\jerem\onedrive\桌面\hw1_110550085\player.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Room.h"
+	"Item.h"
+
+1650566383 c:\users\jerem\onedrive\桌面\hw1_110550085\room.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+
+1650645971 source:c:\users\jerem\onedrive\桌面\hw1_110550085\monster.cpp
+	"Monster.h"
+
+1650476755 c:\users\jerem\onedrive\桌面\hw1_110550085\monster.h
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<cstdlib>
+	"GameCharacter.h"
+	"Player.h"
+
+1650624237 source:c:\users\jerem\onedrive\桌面\hw1_110550085\npc.cpp
+	"NPC.h"
+
+1650472810 c:\users\jerem\onedrive\桌面\hw1_110550085\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Player.h"
+	"Item.h"
+
+1650604110 source:c:\users\jerem\onedrive\桌面\hw1_110550085\object.cpp
+	"Object.h"
+
+1650644062 source:c:\users\jerem\onedrive\桌面\hw1_110550085\player.cpp
+	"Player.h"
+
+1586782384 source:c:\users\jerem\onedrive\桌面\hw1_110550085\record.cpp
+	"Record.h"
+
+1586699066 c:\users\jerem\onedrive\桌面\hw1_110550085\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1650548377 source:c:\users\jerem\onedrive\桌面\hw1_110550085\room.cpp
+	"Room.h"
+
+1650649594 source:c:\users\jerem\onedrive\桌面\hw1_110550085\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Dungeon.h"
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1650560679 c:\users\jerem\onedrive\桌面\hw1_110550085\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1650645507 source:c:\users\jerem\onedrive\桌面\hw1_110550085\dungeon.cpp
+	"Dungeon.h"
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+
+1650681068 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\dungeon.cpp
+	"Dungeon.h"
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+
+1650560679 c:\users\jerem\onedrive\桌面\dungeon_110550085\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1650628275 c:\users\jerem\onedrive\桌面\dungeon_110550085\player.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Room.h"
+	"Item.h"
+
+1650606834 c:\users\jerem\onedrive\桌面\dungeon_110550085\gamecharacter.h
+	<iostream>
+	<string>
+	"Object.h"
+
+1650604111 c:\users\jerem\onedrive\桌面\dungeon_110550085\object.h
+	<iostream>
+	<string>
+	<vector>
+
+1650566383 c:\users\jerem\onedrive\桌面\dungeon_110550085\room.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+
+1650475710 c:\users\jerem\onedrive\桌面\dungeon_110550085\item.h
+	<iostream>
+	<string>
+	<vector>
+	"Object.h"
+	"Player.h"
+
+1650476755 c:\users\jerem\onedrive\桌面\dungeon_110550085\monster.h
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<cstdlib>
+	"GameCharacter.h"
+	"Player.h"
+
+1650472810 c:\users\jerem\onedrive\桌面\dungeon_110550085\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"GameCharacter.h"
+	"Player.h"
+	"Item.h"
+
+1586699066 c:\users\jerem\onedrive\桌面\dungeon_110550085\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1650642478 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\gamecharacter.cpp
+	"GameCharacter.h"
+
+1650624260 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\item.cpp
+	"Item.h"
+
+1650651812 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Dungeon.h"
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1650680996 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\monster.cpp
+	"Monster.h"
+
+1650624237 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\npc.cpp
+	"NPC.h"
+
+1650604110 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\object.cpp
+	"Object.h"
+
+1650683559 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\player.cpp
+	"Player.h"
+
+1586782384 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\record.cpp
+	"Record.h"
+
+1650548377 source:c:\users\jerem\onedrive\桌面\dungeon_110550085\room.cpp
+	"Room.h"
+
