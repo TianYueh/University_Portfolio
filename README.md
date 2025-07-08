@@ -33,7 +33,7 @@ Most courses listed here include programming assignments, projects, and technica
 | 大四上 | [MATLAB程式設計](大四_Senior/MATLAB_Programming) | A |
 | 大四上 | [資訊工程專題](大四_Senior/CS_Projects) | A+ | 專題競賽優等 |
 | 大四下 | [編譯器設計](大四_Senior/Compiler_Design) | A |
-| 大四下 | [深度學習與實驗](大四_Senior/DLP) | 🐔 |
+| 大四下 | [深度學習與實驗](大四_Senior/DLP) | 🐔 | 
 | 大四下 | [圖形識別](大四_Senior/Pattern_Recognition) | B+ |
 | 大四下 | [基於深度學習之視覺辨識專論](大四_Senior/Visual_Recognition) | B+ |
 
