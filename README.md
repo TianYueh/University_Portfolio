@@ -22,7 +22,7 @@ Most courses listed here include programming assignments, projects, and technica
 | 大二下 | [人工智慧概論](大二_Sophomore/Intro_to_AI) | A+ | Workshop最佳人氣獎 |
 | 大二下 | [密碼工程](大二_Sophomore/Cryptography_Engineering) | A+ | 
 | 大三上 | [計算機圖學概論](大三_Junior/Intro_to_Computer_Graphics) | A+ |
-| 大三上 | [編譯器設計概論](大三_Junior/Intro_to_Compiler_Design) | A- |
+| 大三上 | [編譯器設計概論](大三_Junior/Intro_to_Compiler) | A- |
 | 大三上 | [機器學習概論](大三_Junior/Intro_to_ML) | A+ |
 | 大三下 | [影像處理概論](大三_Junior/Intro_to_Image_Processing) | A |
 | 大三下 | [統計學](大三_Junior/Statistics) | A |
